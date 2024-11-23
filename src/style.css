@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --base-clr: #18181b;
+  --line-clr: #42434a;
+  --hover-clr: #222533;
+  --text-clr: #e6e6ef;
+  --border-clr: #a1a1aa;
+  --accent-clr: #4f7bc7;
+  --cta-btn-clr: #075985;
+  --cta-btn-hover: #0369a1;
+  --secondary-text-clr: #a6a8b4;
+  --secondary-base-clr: #1c1c20;
+  --low-priority-clr: #0f6a33;
+  --medium-priority-clr: #a47203;
+  --high-priority-clr: #7a1515;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: Poppins, "Segoe UI", "Segoe UI", Tahoma, Geneva, Verdana,
+    sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  min-height: 100dvh;
+  min-height: 100vh;
+}
+
+ul {
+  list-style-type: none;
+}
+
+label,
+button {
+  cursor: pointer;
+}
+
+button {
+  background: none;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.55rem;
+}
+
+a,
+input,
+button,
+select,
+textarea {
+  outline: none;
+}
+
+a:focus-visible,
+input:focus-visible,
+button:focus-visible,
+textarea:focus-visible,
+select:focus {
+  border-color: var(--secondary-text-clr);
+  box-shadow: 0 0 0 2px var(--secondary-text-clr);
+}
+
+/* Start of Flex Elements */
+.sidebar a,
+.sidebar button,
+.sidebar-section,
+.sidebar-section > span,
+.main-content button,
+.main-content ul li > div {
+  display: flex;
+}
+
+.sidebar-logo,
+.sidebar-projects,
+.main-content ul li > div {
+  align-items: center;
+}
+
+.sidebar .icon,
+.main-content .icon {
+  flex-shrink: 0;
+}
+
+.sidebar-logo span,
+.sidebar-projects span,
+.main-content h2 {
+  flex-grow: 1;
+}
+/* End of Flex Elements */
+
+.sidebar {
+  background-color: var(--base-clr);
+  border-right: 1px solid var(--line-clr);
+  padding: 0.25rem 1rem;
+  height: 100vh;
+  width: 250px;
+
+  align-self: start;
+  position: sticky;
+  top: 0;
+}
+
+.sidebar-logo > span {
+  font-size: 1.55rem;
+  font-style: italic;
+  letter-spacing: 8px;
+}
+
+.sidebar-projects > span {
+  font-size: 1.25rem;
+}
+
+.sidebar a,
+.sidebar-logo > span,
+.sidebar-projects > span {
+  border-radius: 0.5rem;
+  color: var(--text-clr);
+  padding: 0.85rem;
+  text-decoration: none;
+  gap: 1rem;
+}
+
+.sidebar ul li.active a,
+.sidebar ul li.active .icon {
+  color: var(--accent-clr);
+}
+
+.sidebar a:hover,
+.sidebar button:hover,
+.main-content button:hover {
+  background-color: var(--hover-clr);
+}
+
+.main-content {
+  background-color: var(--base-clr);
+  padding: 0.5rem 1.75rem;
+}
+
+.main-content h1,
+.main-content h2 {
+  color: var(--text-clr);
+}
+
+.main-content h1 {
+  font-size: 2.15rem;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 0.4rem 0;
+  text-transform: uppercase;
+}
+
+.main-content h2 {
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+
+.main-content ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.main-content button {
+  padding: 0.4rem;
+}
+
+.main-content p {
+  color: var(--secondary-text-clr);
+  font-size: 0.85rem;
+}
+
+.main-content ul li > div {
+  gap: 0.15rem;
+}
+
+.sidebar .projects-wrapper span,
+.todo .todo-title,
+.todo .todo-description::first-letter {
+  text-transform: capitalize;
+}
+
+.todo-due-container {
+  margin-left: -2px;
+}
+
+.todo-due-date {
+  margin: 4px 0 0 4px;
+}
+
+.todo-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  line-clamp: 3;
+}
+
+/* Start of Utility Classes */
+.general-separator {
+  background-color: var(--line-clr);
+  background: radial-gradient(circle, var(--line-clr) 40%, var(--base-clr) 95%);
+  height: 1px;
+  margin: 0.25rem 0;
+}
+
+.todo-priority-line {
+  background-color: var(--line-clr);
+  height: 1px;
+  margin: 0 0 0.35rem 0;
+}
+
+.low-priority {
+  background-color: var(--low-priority-clr);
+  background: radial-gradient(
+    circle,
+    var(--low-priority-clr) 40%,
+    var(--base-clr) 85%
+  );
+}
+
+.medium-priority {
+  background-color: var(--medium-priority-clr);
+  background: radial-gradient(
+    circle,
+    var(--medium-priority-clr) 40%,
+    var(--base-clr) 85%
+  );
+}
+
+.high-priority {
+  background-color: var(--high-priority-clr);
+  background: radial-gradient(
+    circle,
+    var(--high-priority-clr) 40%,
+    var(--base-clr) 85%
+  );
+}
+
+.sidebar .icon {
+  color: #c4c4c4;
+  font-size: 1.4rem;
+}
+
+.todo .icon {
+  color: #e4e4e6b4;
+  font-size: 1.15rem;
+}
+
+/* End of Utility Classes */
+
+/* 0Media Queries */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main-content .todos > ul {
+    grid-template-columns: auto;
+  }
+}

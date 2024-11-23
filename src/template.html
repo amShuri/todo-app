@@ -3,7 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <title>todoapp</title>
   </head>
-  <body></body>
+  <body>
+    <nav class="sidebar">
+      <ul>
+        <li class="sidebar-logo sidebar-section">
+          <span>todos</span>
+          <button class="collapse-btn">
+            <span class="icon material-symbols-outlined">west</span>
+          </button>
+        </li>
+        <div class="general-separator"></div>
+
+        <!-- MAIN CATEGORIES -->
+        <div class="sidebar-links">
+          <li class="active sidebar-link">
+            <a href="#">
+              <span class="icon material-symbols-outlined"> home_storage </span>
+              <span>All</span>
+            </a>
+          </li>
+
+          <li class="sidebar-link">
+            <a href="#">
+              <span class="icon material-symbols-outlined">
+                pending_actions
+              </span>
+              <span>Pending</span>
+            </a>
+          </li>
+
+          <li class="sidebar-link">
+            <a href="#">
+              <span class="icon material-symbols-outlined"> check_circle </span>
+              <span>Completed</span>
+            </a>
+          </li>
+          <div class="general-separator"></div>
+
+          <!-- PROJECT CATEGORIES -->
+          <li class="sidebar-projects sidebar-section">
+            <span>Projects</span>
+            <button>
+              <span class="icon material-symbols-outlined">add</span>
+            </button>
+          </li>
+          <div class="projects-wrapper"></div>
+        </div>
+      </ul>
+    </nav>
+
+    <main class="main-content">
+      <h1>All</h1>
+      <ul class="todo-container"></ul>
+    </main>
+  </body>
 </html>
