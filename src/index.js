@@ -1,12 +1,11 @@
 import "./style.css";
-import { TodoList, TodoItem } from "./todo.js";
+import { TodoManager, ProjectManager } from "./todo.js";
+import { seedData } from "./mock-data.js";
 
-export const todoList = new TodoList();
+const todoManager = new TodoManager();
+const projectManager = new ProjectManager();
+export const todos = todoManager.getTodos();
+export const projects = projectManager.getProjects();
 
-// Create dummy data for the todoList
-const firstTodo = new TodoItem("title", "desc", "date", "priority", "project");
-const secondTodo = new TodoItem("title", "desc", "date", "priority", "project");
-const thirdTodo = new TodoItem("title", "desc", "date", "priority", "project");
-todoList.addTodo(firstTodo);
-todoList.addTodo(secondTodo);
-todoList.addTodo(thirdTodo);
+// Show some default data for Todos and Projects
+seedData(todoManager, projectManager);

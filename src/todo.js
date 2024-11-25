@@ -1,4 +1,4 @@
-export class TodoList {
+export class TodoManager {
   constructor() {
     this.todos = [];
   }
@@ -42,5 +42,26 @@ export class TodoItem {
     this.priority = priority;
     this.project = project;
     this.status = status;
+  }
+}
+
+export class ProjectManager {
+  constructor() {
+    this.projects = [];
+  }
+
+  getProjects() {
+    return this.projects;
+  }
+
+  addProject(projectName) {
+    this.projects.push(projectName);
+  }
+
+  removeProject(projectName) {
+    const index = this.projects.indexOf(projectName);
+    if (index) {
+      this.projects.splice(index, 1);
+    }
   }
 }
