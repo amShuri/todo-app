@@ -3,18 +3,20 @@ import { TodoItem } from "./todo.js";
 export const seedData = (todoManager, projectManager) => {
   const todoOne = new TodoItem(
     "Todo One",
-    "Description One",
+    "Description One - Pending",
     "11-25-2024",
     "low",
-    "home"
+    "home",
+    "pending"
   );
 
   const todoTwo = new TodoItem(
     "Todo Two",
-    "Description Two",
+    "Description Two - Completed",
     "11-25-2024",
     "low",
-    "events"
+    "events",
+    "completed"
   );
 
   todoManager.addTodo(todoOne);

@@ -1,11 +1,13 @@
 import "./style.css";
 import { TodoManager, ProjectManager } from "./todo.js";
 import { seedData } from "./mock-data.js";
+import { renderTodosByProject } from "./ui.js";
 
-const todoManager = new TodoManager();
-const projectManager = new ProjectManager();
-export const todos = todoManager.getTodos();
-export const projects = projectManager.getProjects();
+export const todoManager = new TodoManager();
+export const projectManager = new ProjectManager();
 
 // Show some default data for Todos and Projects
 seedData(todoManager, projectManager);
+
+// Render & Listener initialization
+renderTodosByProject();
