@@ -1,7 +1,7 @@
 import "./style.css";
 import { TodoManager, ProjectManager } from "./todo.js";
 import { seedData } from "./mock-data.js";
-import { renderTodosByProject } from "./ui.js";
+import { renderProjects, renderTodosByProject } from "./ui.js";
 
 export const todoManager = new TodoManager();
 export const projectManager = new ProjectManager();
@@ -10,4 +10,5 @@ export const projectManager = new ProjectManager();
 seedData(todoManager, projectManager);
 
 // Render & Listener initialization
+renderProjects();
 renderTodosByProject();

@@ -1,4 +1,4 @@
-import { getTodosByProject } from "./utility.js";
+import { getTodosByProject, getProjectsFromList } from "./utility.js";
 
 export function renderTodosByProject(todoProject) {
   const todosToRender = getTodosByProject(todoProject);
@@ -37,4 +37,33 @@ function createTodoElement(todo) {
   );
 
   return todoElement;
+}
+
+export function renderProjects() {
+  const projectList = getProjectsFromList();
+  const sidebarProjects = document.querySelector(".projects-wrapper");
+  sidebarProjects.innerHTML = "";
+  projectList.forEach((projectName) => {
+    sidebarProjects.appendChild(createProjectElement(projectName));
+  });
+}
+
+function createProjectElement(projectName) {
+  const groupElement = document.createElement("li");
+  groupElement.dataset.projectName = projectName;
+  groupElement.classList.add("sidebar-link");
+  groupElement.insertAdjacentHTML(
+    "beforeend",
+    `
+      <a href="#">
+        <span class="icon material-symbols-outlined">tag</span>
+        <span>${projectName}</span>
+      </a>
+    `
+  );
+  return groupElement;
+}
+
+export function updateProjectTitle(projectName) {
+  document.querySelector(".main-content h1").textContent = projectName;
 }
