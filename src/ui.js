@@ -1,5 +1,6 @@
 import { getTodosByProject, getProjectsFromList } from "./utility.js";
 
+// Todos functionality
 export function renderTodosByProject(todoProject) {
   const todosToRender = getTodosByProject(todoProject);
   const todoContainer = document.querySelector(".todo-container");
@@ -39,6 +40,7 @@ function createTodoElement(todo) {
   return todoElement;
 }
 
+// Projects functionality
 export function renderProjects() {
   const projectList = getProjectsFromList();
   const sidebarProjects = document.querySelector(".projects-wrapper");
@@ -64,6 +66,31 @@ function createProjectElement(projectName) {
   return groupElement;
 }
 
-export function updateProjectTitle(projectName) {
+// Sidebar functionality
+export function initSidebarListeners() {
+  const sidebarLinks = document.querySelector(".sidebar-links");
+  sidebarLinks.addEventListener("click", handleSidebarClick);
+}
+
+function handleSidebarClick(e) {
+  const link = e.target.closest("li.sidebar-link");
+  if (!link) return;
+  const project = link.dataset.projectName;
+  highlightActiveProject(project);
+  updateProjectTitle(project);
+  renderTodosByProject(project);
+}
+
+function highlightActiveProject(projectName) {
+  const activeProject = document.querySelector("li.active");
+  if (activeProject) {
+    activeProject.classList.remove("active");
+  }
+
+  const project = document.querySelector(`[data-project-name="${projectName}`);
+  project.classList.add("active");
+}
+
+function updateProjectTitle(projectName) {
   document.querySelector(".main-content h1").textContent = projectName;
 }
