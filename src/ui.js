@@ -51,10 +51,10 @@ export function renderProjects() {
 }
 
 function createProjectElement(projectName) {
-  const groupElement = document.createElement("li");
-  groupElement.dataset.projectName = projectName;
-  groupElement.classList.add("sidebar-link");
-  groupElement.insertAdjacentHTML(
+  const projectElement = document.createElement("li");
+  projectElement.dataset.projectName = projectName;
+  projectElement.classList.add("sidebar-link");
+  projectElement.insertAdjacentHTML(
     "beforeend",
     `
       <a href="#">
@@ -63,5 +63,5 @@ function createProjectElement(projectName) {
       </a>
     `
   );
-  return groupElement;
+  return projectElement;
 }
