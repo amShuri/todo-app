@@ -204,6 +204,107 @@ select:focus {
   line-clamp: 3;
 }
 
+/* Start of Modals */
+::backdrop {
+  background: linear-gradient(
+    135deg,
+    var(--secondary-base-clr) 0%,
+    var(--base-clr) 50%,
+    var(--hover-clr) 100%
+  );
+  opacity: 0.85;
+}
+
+dialog {
+  background-color: var(--secondary-base-clr);
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 0 5px var(--secondary-text-clr);
+  color: var(--text-clr);
+  margin: 0 auto;
+  max-width: 468px;
+  padding: 0.65rem 1.5rem;
+  top: 10%;
+  width: calc(100% - 2rem);
+}
+
+dialog h2 {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+dialog button,
+dialog > form input,
+dialog > form select {
+  min-width: 100px;
+  width: 100%;
+}
+
+dialog > form textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+dialog > form label {
+  display: block;
+  font-size: 0.88rem;
+  margin-top: 0.65rem;
+  margin-bottom: 0.15rem;
+}
+
+dialog > form input {
+  margin-bottom: 0.35rem;
+}
+
+dialog > form input,
+dialog > form textarea,
+dialog > form select,
+dialog > form button {
+  padding: 0.45rem 0.35rem;
+  border-radius: 0.25rem;
+}
+
+dialog > form textarea,
+dialog > form input[type="text"] {
+  width: 100%;
+  font: inherit;
+  font-size: 0.8rem;
+}
+
+dialog button {
+  font-family: monospace;
+  display: inline-block;
+  background-color: var(--cta-btn-clr);
+  color: var(--text-clr);
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+dialog button:hover {
+  background-color: var(--cta-btn-hover);
+}
+
+dialog .form-controls {
+  margin: 1rem 0;
+}
+
+dialog .form-controls button {
+  margin-top: 0;
+}
+
+dialog .form-details,
+dialog .form-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+dialog .form-details > div,
+dialog .form-controls > div {
+  flex: 1;
+}
+/* End of Modals */
+
 /* Start of Utility Classes */
 .general-separator {
   background-color: var(--line-clr);
@@ -243,6 +344,10 @@ select:focus {
     var(--high-priority-clr) 40%,
     var(--base-clr) 85%
   );
+}
+
+.text-white-shadow {
+  text-shadow: var(--secondary-text-clr) 1px 0 12px;
 }
 
 .sidebar .icon {
