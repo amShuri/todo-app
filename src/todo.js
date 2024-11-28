@@ -28,8 +28,8 @@ export class TodoManager {
 export class TodoItem {
   static id = 0;
   constructor(
-    title,
-    description = "",
+    title = "no title",
+    description = "no description",
     dueDate = null,
     priority = "low",
     project = "general",
@@ -37,8 +37,8 @@ export class TodoItem {
   ) {
     this.id = TodoItem.id++;
     this.title = title;
-    this.dueDate = dueDate;
     this.description = description;
+    this.dueDate = dueDate;
     this.priority = priority;
     this.project = project;
     this.status = status;
