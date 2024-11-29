@@ -1,7 +1,7 @@
 import { TodoItem } from "./todo.js";
 import { todoManager } from "./index.js";
 import { getFormValues, formatDateForDisplay } from "./utility.js";
-import { renderTodosByProject } from "./ui.js";
+import { displayTodos } from "./ui.js";
 
 export function setupModalForms() {
   setupModalFormListener("#add-todo-form", "#add-todo-modal", addNewTodo);
@@ -49,5 +49,5 @@ function addNewTodo(form) {
     )
   );
 
-  renderTodosByProject(project);
+  displayTodos(project);
 }

@@ -1,7 +1,7 @@
 import { getTodosByProject, getProjectsFromList } from "./utility.js";
 
 // Todos functionality
-export function renderTodosByProject(todoProject) {
+export function renderTodosByProject(todoProject = "all") {
   const todosToRender = getTodosByProject(todoProject);
   const todoContainer = document.querySelector(".todo-container");
   todoContainer.innerHTML = "";
@@ -64,4 +64,25 @@ function createProjectElement(projectName) {
     `
   );
   return projectElement;
+}
+
+// General Sidebar Functions
+export function displayTodos(projectName) {
+  renderTodosByProject(projectName);
+  highlightActiveProject(projectName);
+  updateProjectTitle(projectName);
+}
+
+function highlightActiveProject(projectName) {
+  const activeProject = document.querySelector("li.active");
+  if (activeProject) {
+    activeProject.classList.remove("active");
+  }
+
+  const project = document.querySelector(`[data-project-name="${projectName}`);
+  project.classList.add("active");
+}
+
+function updateProjectTitle(projectName) {
+  document.querySelector(".main-content h1").textContent = projectName;
 }

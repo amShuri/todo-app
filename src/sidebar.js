@@ -1,4 +1,4 @@
-import { renderTodosByProject } from "./ui.js";
+import { displayTodos } from "./ui.js";
 
 export function setupSidebarListeners() {
   const sidebar = document.querySelector(".sidebar");
@@ -16,22 +16,6 @@ function handleSidebarClick(e) {
 
   if (projectBtn) {
     const project = projectBtn.dataset.projectName;
-    highlightActiveProject(project);
-    updateProjectTitle(project);
-    renderTodosByProject(project);
+    displayTodos(project);
   }
-}
-
-function highlightActiveProject(projectName) {
-  const activeProject = document.querySelector("li.active");
-  if (activeProject) {
-    activeProject.classList.remove("active");
-  }
-
-  const project = document.querySelector(`[data-project-name="${projectName}`);
-  project.classList.add("active");
-}
-
-function updateProjectTitle(projectName) {
-  document.querySelector(".main-content h1").textContent = projectName;
 }
