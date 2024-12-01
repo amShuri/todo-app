@@ -55,7 +55,9 @@ export class ProjectManager {
   }
 
   addProject(projectName) {
-    this.projects.push(projectName);
+    if (!this.projects.includes(projectName)) {
+      this.projects.push(projectName);
+    }
   }
 
   removeProject(projectName) {

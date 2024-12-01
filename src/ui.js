@@ -66,6 +66,21 @@ function createProjectElement(projectName) {
   return projectElement;
 }
 
+export function updateProjectsInForms() {
+  const projectList = getProjectsFromList();
+  const projectOptions = document.querySelector(".todo-projects");
+  projectOptions.innerHTML = "";
+
+  projectList.forEach((project) => {
+    projectOptions.insertAdjacentHTML(
+      "beforeend",
+      `
+        <option value="${project}">${project}</option>
+      `
+    );
+  });
+}
+
 // General Sidebar Functions
 export function displayTodos(projectName) {
   renderTodosByProject(projectName);

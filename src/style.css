@@ -182,6 +182,7 @@ select:focus {
   gap: 0.15rem;
 }
 
+select,
 .sidebar .projects-wrapper span,
 .todo .todo-title,
 .todo .todo-description::first-letter {

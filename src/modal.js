@@ -1,10 +1,11 @@
 import { TodoItem } from "./todo.js";
-import { todoManager } from "./index.js";
+import { todoManager, projectManager } from "./index.js";
 import { getFormValues, formatDateForDisplay } from "./utility.js";
-import { displayTodos } from "./ui.js";
+import { displayTodos, renderProjects, updateProjectsInForms } from "./ui.js";
 
 export function setupModalForms() {
   setupModalFormListener("#add-todo-form", "#add-todo-modal", addNewTodo);
+  setupModalFormListener("#add-project-form", "#add-project-modal", addProject);
 }
 
 export function setupModalCloseButtons() {
@@ -50,4 +51,12 @@ function addNewTodo(form) {
   );
 
   displayTodos(project);
+}
+
+function addProject(form) {
+  const { projectTitle } = getFormValues(form.id);
+  projectManager.addProject(projectTitle.toLowerCase());
+
+  renderProjects();
+  updateProjectsInForms();
 }
