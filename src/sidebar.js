@@ -11,7 +11,7 @@ function handleSidebarClick(e) {
 
   if (modalBtn) {
     const modalId = modalBtn.dataset.targetModal;
-    document.querySelector(`#${modalId}-modal`).showModal();
+    document.querySelector(`#${modalId}`).showModal();
   }
 
   if (projectBtn) {

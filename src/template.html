@@ -22,7 +22,7 @@
 
         <!-- ADD NEW TODO BUTTON -->
         <li>
-          <a href="#" data-target-modal="add-todo">
+          <a href="#" data-target-modal="add-todo-modal">
             <span class="icon material-symbols-outlined">add_circle</span>
             <span class="text-white-shadow">ADD NEW TODO</span>
           </a>
@@ -58,7 +58,7 @@
           <!-- PROJECT CATEGORIES -->
           <li class="sidebar-projects sidebar-section">
             <span>Projects</span>
-            <button data-target-modal="add-project">
+            <button data-target-modal="add-project-modal">
               <span class="icon material-symbols-outlined">add</span>
             </button>
           </li>
@@ -82,7 +82,7 @@
             <label for="add-todo-title">Title</label>
             <input
               type="text"
-              name="title"
+              name="newTitle"
               id="add-todo-title"
               placeholder="Buy groceries for the week"
               autocomplete="off"
@@ -94,7 +94,7 @@
           <div>
             <label for="add-todo-description">Description</label>
             <textarea
-              name="description"
+              name="newDescription"
               id="add-todo-description"
               placeholder="Go to the nearest shop after making the grocery list.."
             ></textarea>
@@ -105,7 +105,7 @@
               <label for="add-todo-due-date">Due</label>
               <input
                 type="date"
-                name="dueDate"
+                name="newDueDate"
                 id="add-todo-due-date"
                 required
               />
@@ -113,7 +113,7 @@
 
             <div>
               <label for="add-todo-priority">Priority</label>
-              <select name="priority" id="add-todo-priority">
+              <select name="newPriority" id="add-todo-priority">
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
@@ -123,7 +123,7 @@
             <div>
               <label for="add-todo-project">Project</label>
               <select
-                name="project"
+                name="newProject"
                 id="add-todo-project"
                 class="todo-projects"
               >
