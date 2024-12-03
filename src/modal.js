@@ -7,6 +7,7 @@ export function setupModalForms() {
   setupModalFormListener("#add-todo-form", "#add-todo-modal", addNewTodo);
   setupModalFormListener("#add-project-form", "#add-project-modal", addProject);
   setupModalFormListener("#edit-todo-form", "#edit-todo-modal", editTodo);
+  setupModalFormListener("#remove-todo-form", "#remove-todo-modal", removeTodo);
 }
 
 export function setupModalCloseButtons() {
@@ -80,4 +81,11 @@ function editTodo(form) {
   });
 
   displayTodos(updatedProject);
+}
+
+function removeTodo(form) {
+  const todoId = form.closest("dialog").dataset.todoId;
+  todoManager.removeTodo(todoId);
+
+  displayTodos();
 }

@@ -82,7 +82,7 @@ export function updateProjectsInForms() {
 }
 
 // General Sidebar Functions
-export function displayTodos(projectName) {
+export function displayTodos(projectName = "all") {
   renderTodosByProject(projectName);
   highlightActiveProject(projectName);
   updateProjectTitle(projectName);

@@ -16,7 +16,7 @@ export class TodoManager {
   }
 
   removeTodo(todoId) {
-    const index = this.todos.findIndex((todo) => todo.id === todoId);
+    const index = this.todos.findIndex((todo) => todo.id === Number(todoId));
     this.todos.splice(index, 1);
   }
 
