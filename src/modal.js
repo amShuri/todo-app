@@ -6,6 +6,7 @@ import { displayTodos, renderProjects, updateProjectsInForms } from "./ui.js";
 export function setupModalForms() {
   setupModalFormListener("#add-todo-form", "#add-todo-modal", addNewTodo);
   setupModalFormListener("#add-project-form", "#add-project-modal", addProject);
+  setupModalFormListener("#edit-todo-form", "#edit-todo-modal", editTodo);
 }
 
 export function setupModalCloseButtons() {
@@ -58,4 +59,25 @@ function addProject(form) {
 
   renderProjects();
   updateProjectsInForms();
+}
+
+function editTodo(form) {
+  const todoId = form.closest("dialog").dataset.todoId;
+  const {
+    updatedTitle,
+    updatedDescription,
+    updatedDueDate,
+    updatedPriority,
+    updatedProject,
+  } = getFormValues(form.id);
+
+  todoManager.editTodo(todoId, {
+    title: updatedTitle,
+    description: updatedDescription,
+    dueDate: formatDateForDisplay(updatedDueDate),
+    priority: updatedPriority,
+    project: updatedProject,
+  });
+
+  displayTodos(updatedProject);
 }

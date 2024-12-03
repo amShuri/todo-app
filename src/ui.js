@@ -19,10 +19,10 @@ function createTodoElement(todo) {
     `
       <div>
         <h2 class="todo-title">${todo.title}</h2>
-        <button class="edit-todo-btn">
+        <button data-edit-btn data-target-modal="edit-todo-modal">
           <span class="icon material-symbols-outlined">edit</span>
         </button>
-        <button class="remove-todo-btn">
+        <button data-target-modal="remove-todo-modal">
           <span class="icon material-symbols-outlined">delete</span>
         </button>
       </div>

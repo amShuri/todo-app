@@ -172,6 +172,101 @@
           </div>
         </form>
       </dialog>
+
+      <dialog id="edit-todo-modal">
+        <h2>Update Todo</h2>
+
+        <div class="general-separator"></div>
+
+        <form method="dialog" id="edit-todo-form">
+          <div>
+            <label for="edit-todo-title">Title</label>
+            <input
+              data-edit-todo="title"
+              name="updatedTitle"
+              type="text"
+              id="edit-todo-title"
+              value=""
+              required
+            />
+          </div>
+
+          <div>
+            <label for="edit-todo-description">Description</label>
+            <textarea
+              data-edit-todo="description"
+              name="updatedDescription"
+              id="edit-todo-description"
+            ></textarea>
+          </div>
+
+          <div class="form-details">
+            <div>
+              <label for="edit-todo-due-date">Due</label>
+              <input
+                data-edit-todo="dueDate"
+                name="updatedDueDate"
+                type="date"
+                id="edit-todo-due-date"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="edit-todo-priority">Priority</label>
+              <select
+                data-edit-todo="priority"
+                name="updatedPriority"
+                id="edit-todo-priority"
+              >
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="edit-todo-project">Project</label>
+              <select
+                data-edit-todo="project"
+                name="updatedProject"
+                id="edit-todo-project"
+              >
+                <option value="home">Home</option>
+                <option value="events">Events</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-controls">
+            <div>
+              <button type="submit">Update</button>
+            </div>
+
+            <div>
+              <button type="button" data-action="close-modal">Close</button>
+            </div>
+          </div>
+        </form>
+      </dialog>
+
+      <dialog id="remove-todo-modal">
+        <h2>Remove Todo</h2>
+
+        <div class="general-separator"></div>
+
+        <form method="dialog" id="remove-todo-form">
+          <div class="form-controls">
+            <div>
+              <button type="submit">Remove</button>
+            </div>
+
+            <div>
+              <button type="button" data-action="close">Close</button>
+            </div>
+          </div>
+        </form>
+      </dialog>
     </div>
   </body>
 </html>

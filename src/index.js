@@ -4,6 +4,7 @@ import { seedData } from "./mock-data.js";
 import { renderProjects, renderTodosByProject } from "./ui.js";
 import { setupSidebarListeners } from "./sidebar.js";
 import { setupModalForms, setupModalCloseButtons } from "./modal.js";
+import { setupTodoListeners } from "./todoControls.js";
 
 export const todoManager = new TodoManager();
 export const projectManager = new ProjectManager();
@@ -19,3 +20,4 @@ renderTodosByProject();
 setupSidebarListeners();
 setupModalForms();
 setupModalCloseButtons();
+setupTodoListeners();

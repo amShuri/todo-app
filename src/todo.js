@@ -3,6 +3,10 @@ export class TodoManager {
     this.todos = [];
   }
 
+  getTodo(todoId) {
+    return this.todos[todoId];
+  }
+
   getTodos() {
     return this.todos;
   }
@@ -17,7 +21,7 @@ export class TodoManager {
   }
 
   editTodo(todoId, newDetails) {
-    const index = this.todos.findIndex((todo) => todo.id === todoId);
+    const index = this.todos.findIndex((todo) => todo.id === Number(todoId));
     this.todos[index] = {
       ...this.todos[index],
       ...newDetails,
