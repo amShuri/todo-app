@@ -22,6 +22,11 @@
   padding: 0;
 }
 
+html,
+body {
+  height: 100vh;
+}
+
 html {
   font-family: Poppins, "Segoe UI", "Segoe UI", Tahoma, Geneva, Verdana,
     sans-serif;
@@ -31,8 +36,6 @@ html {
 body {
   display: grid;
   grid-template-columns: auto 1fr;
-  min-height: 100dvh;
-  min-height: 100vh;
 }
 
 ul {
@@ -143,6 +146,7 @@ select:focus {
 .main-content {
   background-color: var(--base-clr);
   padding: 0.5rem 1.75rem;
+  height: 100vh;
 }
 
 .main-content h1,
@@ -372,13 +376,14 @@ dialog .form-controls > div {
 
 /* End of Utility Classes */
 
-/* 0Media Queries */
-@media screen and (max-width: 768px) {
-  .sidebar {
-    display: none;
+/* Media Queries */
+@media (max-width: 768px) {
+  body,
+  ul {
+    grid-template-columns: auto;
   }
 
-  .main-content .todos > ul {
-    grid-template-columns: auto;
+  .sidebar {
+    display: none;
   }
 }
