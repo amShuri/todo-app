@@ -2,6 +2,7 @@ import { TodoItem } from "./todo.js";
 import { todoManager, projectManager } from "./index.js";
 import { getFormValues, formatDateForDisplay } from "./utility.js";
 import { displayTodos, renderProjects, updateProjectsInForms } from "./ui.js";
+import { storeInLocalStorage } from "./localStorage.js";
 
 export function setupModalForms() {
   setupModalFormListener("#add-todo-form", "#add-todo-modal", addNewTodo);
@@ -52,6 +53,7 @@ function addNewTodo(form) {
   );
 
   displayTodos(newProject);
+  storeInLocalStorage("todoList", todoManager.getTodos());
 }
 
 function addProject(form) {
@@ -60,6 +62,7 @@ function addProject(form) {
 
   renderProjects();
   updateProjectsInForms();
+  storeInLocalStorage("projectList", projectManager.getProjects());
 }
 
 function editTodo(form) {
@@ -81,6 +84,7 @@ function editTodo(form) {
   });
 
   displayTodos(updatedProject);
+  storeInLocalStorage("todoList", todoManager.getTodos());
 }
 
 function removeTodo(form) {
@@ -88,4 +92,5 @@ function removeTodo(form) {
   todoManager.removeTodo(todoId);
 
   displayTodos();
+  storeInLocalStorage("todoList", todoManager.getTodos());
 }

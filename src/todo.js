@@ -1,6 +1,8 @@
+import { loadFromLocalStorage } from "./localStorage";
+
 export class TodoManager {
   constructor() {
-    this.todos = [];
+    this.todos = loadFromLocalStorage("todoList") || [];
   }
 
   getTodo(todoId) {
@@ -51,7 +53,7 @@ export class TodoItem {
 
 export class ProjectManager {
   constructor() {
-    this.projects = [];
+    this.projects = loadFromLocalStorage("projectList") || [];
   }
 
   getProjects() {

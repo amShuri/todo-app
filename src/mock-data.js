@@ -19,9 +19,14 @@ export const seedData = (todoManager, projectManager) => {
     "completed"
   );
 
-  todoManager.addTodo(todoOne);
-  todoManager.addTodo(todoTwo);
+  // Only add mock data if the arrays are empty
+  if (!todoManager.getTodos().length) {
+    todoManager.addTodo(todoOne);
+    todoManager.addTodo(todoTwo);
+  }
 
-  projectManager.addProject("home");
-  projectManager.addProject("events");
+  if (!projectManager.getProjects().length) {
+    projectManager.addProject("home");
+    projectManager.addProject("events");
+  }
 };
