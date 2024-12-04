@@ -88,9 +88,9 @@ select:focus {
   align-items: center;
 }
 
-.sidebar .icon,
-.main-content .icon {
-  flex-shrink: 0;
+.sidebar-logo,
+.sidebar-projects {
+  justify-content: center;
 }
 
 .sidebar-logo span,
@@ -110,6 +110,23 @@ select:focus {
   align-self: start;
   position: sticky;
   top: 0;
+  transition: 300ms ease-in-out;
+  overflow-x: hidden;
+  text-wrap: nowrap;
+}
+
+.sidebar .collapse-btn {
+  transition: rotate 150ms ease;
+}
+
+.sidebar.close {
+  padding: 5px;
+  width: 58px;
+}
+
+.sidebar.close .sidebar-logo > span,
+.sidebar.close .sidebar-projects > span {
+  display: none;
 }
 
 .sidebar-logo > span {
@@ -208,6 +225,10 @@ select,
   -webkit-line-clamp: 3;
   overflow: hidden;
   line-clamp: 3;
+}
+
+.rotate {
+  transform: rotate(180deg);
 }
 
 /* Start of Modals */
@@ -373,17 +394,4 @@ dialog .form-controls > div {
   color: #e4e4e6b4;
   font-size: 1.15rem;
 }
-
 /* End of Utility Classes */
-
-/* Media Queries */
-@media (max-width: 768px) {
-  body,
-  ul {
-    grid-template-columns: auto;
-  }
-
-  .sidebar {
-    display: none;
-  }
-}

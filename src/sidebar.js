@@ -19,3 +19,13 @@ function handleSidebarClick(e) {
     displayTodos(project);
   }
 }
+
+export function setupSidebarToggle() {
+  const sidebar = document.querySelector(".sidebar");
+  const collapseBtn = document.querySelector(".collapse-btn");
+
+  collapseBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("close");
+    collapseBtn.classList.toggle("rotate");
+  });
+}

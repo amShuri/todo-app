@@ -2,7 +2,7 @@ import "./style.css";
 import { TodoManager, ProjectManager } from "./todo.js";
 import { seedData } from "./mock-data.js";
 import { renderProjects, renderTodosByProject } from "./ui.js";
-import { setupSidebarListeners } from "./sidebar.js";
+import { setupSidebarListeners, setupSidebarToggle } from "./sidebar.js";
 import { setupModalForms, setupModalCloseButtons } from "./modal.js";
 import { setupTodoListeners } from "./todoControls.js";
 
@@ -17,6 +17,7 @@ renderProjects();
 renderTodosByProject();
 
 // Setup sidebar & modal event listeners on pageload
+setupSidebarToggle();
 setupSidebarListeners();
 setupModalForms();
 setupModalCloseButtons();
