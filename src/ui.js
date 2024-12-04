@@ -1,4 +1,5 @@
-import { getTodosByProject, getProjectsFromList } from "./utility.js";
+import { projectManager } from "./index.js";
+import { getTodosByProject } from "./utility.js";
 
 // Todos functionality
 export function renderTodosByProject(todoProject = "all") {
@@ -42,7 +43,7 @@ function createTodoElement(todo) {
 
 // Projects functionality
 export function renderProjects() {
-  const projectList = getProjectsFromList();
+  const projectList = projectManager.getProjects();
   const sidebarProjects = document.querySelector(".projects-wrapper");
   sidebarProjects.innerHTML = "";
   projectList.forEach((projectName) => {
@@ -67,7 +68,7 @@ function createProjectElement(projectName) {
 }
 
 export function updateProjectsInForms() {
-  const projectList = getProjectsFromList();
+  const projectList = projectManager.getProjects();
   const projectOptions = document.querySelector(".todo-projects");
   projectOptions.innerHTML = "";
 
