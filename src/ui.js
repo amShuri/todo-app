@@ -49,6 +49,9 @@ export function renderProjects() {
   projectList.forEach((projectName) => {
     sidebarProjects.appendChild(createProjectElement(projectName));
   });
+
+  // Ensure the "add & edit todo" forms also have the projects rendered
+  updateProjectOptions();
 }
 
 function createProjectElement(projectName) {
@@ -67,18 +70,21 @@ function createProjectElement(projectName) {
   return projectElement;
 }
 
-export function updateProjectsInForms() {
-  const projectList = projectManager.getProjects();
-  const projectOptions = document.querySelector(".todo-projects");
-  projectOptions.innerHTML = "";
+function updateProjectOptions() {
+  const projects = projectManager.getProjects();
+  const projectSelectElements = document.querySelectorAll(".todo-project");
 
-  projectList.forEach((project) => {
-    projectOptions.insertAdjacentHTML(
-      "beforeend",
-      `
-        <option value="${project}">${project}</option>
-      `
-    );
+  projectSelectElements.forEach((selectElement) => {
+    selectElement.innerHTML = "";
+
+    projects.forEach((project) => {
+      selectElement.insertAdjacentHTML(
+        "beforeend",
+        `
+          <option value="${project}">${project}</option>
+        `
+      );
+    });
   });
 }
 

@@ -1,7 +1,7 @@
 import { TodoItem } from "./todo.js";
 import { todoManager, projectManager } from "./index.js";
 import { getFormValues, formatDateForDisplay } from "./utility.js";
-import { displayTodos, renderProjects, updateProjectsInForms } from "./ui.js";
+import { displayTodos, renderProjects } from "./ui.js";
 import { storeInLocalStorage } from "./localStorage.js";
 
 export function setupModalForms() {
@@ -61,7 +61,6 @@ function addProject(form) {
   projectManager.addProject(projectTitle.toLowerCase());
 
   renderProjects();
-  updateProjectsInForms();
   storeInLocalStorage("projectList", projectManager.getProjects());
 }
 
