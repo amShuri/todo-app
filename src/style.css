@@ -120,8 +120,8 @@ select:focus {
 }
 
 .sidebar.close {
-  padding: 5px;
-  width: 58px;
+  padding: 4px 2px;
+  width: 55px;
 }
 
 .sidebar.close .sidebar-logo > span,
@@ -292,6 +292,10 @@ dialog > form input {
   margin-bottom: 0.35rem;
 }
 
+dialog input[type="date"] {
+  border: inherit;
+}
+
 dialog > form input,
 dialog > form textarea,
 dialog > form select,
@@ -327,7 +331,12 @@ dialog .form-controls button {
   margin-top: 0;
 }
 
-dialog .form-details,
+dialog .form-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  column-gap: 1rem;
+}
+
 dialog .form-controls {
   display: flex;
   flex-wrap: wrap;
