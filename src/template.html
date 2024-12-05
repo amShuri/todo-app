@@ -14,7 +14,7 @@
       <ul>
         <li class="sidebar-logo sidebar-section">
           <span>todos</span>
-          <button class="collapse-btn">
+          <button class="collapse-btn" title="Collapse Sidebar">
             <span class="icon material-symbols-outlined">east</span>
           </button>
         </li>
@@ -23,7 +23,9 @@
         <!-- ADD NEW TODO BUTTON -->
         <li>
           <a href="#" data-target-modal="add-todo-modal">
-            <span class="icon material-symbols-outlined"> add_task </span>
+            <span class="icon material-symbols-outlined" title="Add Todo">
+              add_task
+            </span>
             <span class="text-white-shadow">ADD NEW TODO</span>
           </a>
         </li>
@@ -32,14 +34,14 @@
         <!-- MAIN CATEGORIES -->
         <div class="sidebar-links">
           <li data-project-name="all" class="active sidebar-link">
-            <a href="#">
+            <a href="#" title="All">
               <span class="icon material-symbols-outlined"> home_storage </span>
               <span>All</span>
             </a>
           </li>
 
           <li data-project-name="pending" class="sidebar-link">
-            <a href="#">
+            <a href="#" title="Pending">
               <span class="icon material-symbols-outlined">
                 pending_actions
               </span>
@@ -48,7 +50,7 @@
           </li>
 
           <li data-project-name="completed" class="sidebar-link">
-            <a href="#">
+            <a href="#" title="Completed">
               <span class="icon material-symbols-outlined"> check_circle </span>
               <span>Completed</span>
             </a>
@@ -58,7 +60,7 @@
           <!-- PROJECT CATEGORIES -->
           <li class="sidebar-projects sidebar-section">
             <span>Projects</span>
-            <button data-target-modal="add-project-modal">
+            <button data-target-modal="add-project-modal" title="Add Project">
               <span class="icon material-symbols-outlined"> add_2 </span>
             </button>
           </li>

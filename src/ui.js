@@ -20,10 +20,10 @@ function createTodoElement(todo) {
     `
       <div>
         <h2 class="todo-title">${todo.title}</h2>
-        <button data-edit-btn data-target-modal="edit-todo-modal">
+        <button data-edit-btn data-target-modal="edit-todo-modal" title="Edit">
           <span class="icon material-symbols-outlined">edit</span>
         </button>
-        <button data-target-modal="remove-todo-modal">
+        <button data-target-modal="remove-todo-modal" title="Remove">
           <span class="icon material-symbols-outlined">delete</span>
         </button>
       </div>
@@ -71,7 +71,7 @@ function createProjectElement(projectName) {
   projectElement.insertAdjacentHTML(
     "beforeend",
     `
-      <a href="#">
+      <a href="#" title="${projectName}">
         <span class="icon material-symbols-outlined">tag</span>
         <span>${projectName}</span>
       </a>
