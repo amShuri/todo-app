@@ -31,9 +31,19 @@ function createTodoElement(todo) {
       <div>
         <p class="todo-description">${todo.description}</p>
       </div>
-      <div class="todo-due-container">
-        <span class="icon material-symbols-outlined">calendar_month</span>
-        <p class="todo-due-date">${todo.dueDate}</p>
+      <div class="todo-more-details">
+        <div>
+          <span class="icon material-symbols-outlined">calendar_month</span>
+          <p>${todo.dueDate}</p>
+        </div>
+        <div>
+          <span class="icon material-symbols-outlined">
+            ${todo.status === "pending" ? "hourglass_top" : "check"}  
+          </span>
+          <p>
+            ${todo.status === "pending" ? "Pending ..." : "Completed"}
+          </p>
+        </div> 
       </div>
     `
   );

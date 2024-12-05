@@ -39,8 +39,14 @@ function setupModalFormListener(formSelector, modalSelector, onSubmit) {
 }
 
 function addNewTodo(form) {
-  const { newTitle, newDescription, newDueDate, newPriority, newProject } =
-    getFormValues(form.id);
+  const {
+    newTitle,
+    newDescription,
+    newDueDate,
+    newPriority,
+    newProject,
+    newStatus,
+  } = getFormValues(form.id);
 
   todoManager.addTodo(
     new TodoItem(
@@ -48,7 +54,8 @@ function addNewTodo(form) {
       newDescription,
       formatDateForDisplay(newDueDate),
       newPriority,
-      newProject
+      newProject,
+      newStatus
     )
   );
 
@@ -72,6 +79,7 @@ function editTodo(form) {
     updatedDueDate,
     updatedPriority,
     updatedProject,
+    updatedStatus,
   } = getFormValues(form.id);
 
   todoManager.editTodo(todoId, {
@@ -80,6 +88,7 @@ function editTodo(form) {
     dueDate: formatDateForDisplay(updatedDueDate),
     priority: updatedPriority,
     project: updatedProject,
+    status: updatedStatus,
   });
 
   displayTodos(updatedProject);
